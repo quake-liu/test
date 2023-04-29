@@ -99,7 +99,7 @@ jobs:
       - name: Custom Settings
         run: |
           cd ./owrt
-          sed -i '10s/5.15/5.4/' ./target/linux/rockchip/Makefile
+          sed -i '10s/KERNEL_PATCHVER/#KERNEL_PATCHVER/' ./target/linux/rockchip/Makefile
           cat ./target/linux/rockchip/Makefile
           rm -rf ./tmp* ./.config*
           cat $GITHUB_WORKSPACE/Config/$OWRT_TARGET.txt $GITHUB_WORKSPACE/Config/General.txt >> .config
